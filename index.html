@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Journey 💖</title>
+
+<style>
+
+body{
+margin:0;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+background:radial-gradient(circle,#1a001f,#ff4b91,#ffb6c1);
+font-family:Arial, sans-serif;
+color:white;
+text-align:center;
+overflow:hidden;
+padding:20px;
+}
+
+.box{
+background:rgba(255,255,255,0.12);
+padding:30px;
+border-radius:25px;
+backdrop-filter:blur(10px);
+box-shadow:0 0 25px rgba(255,255,255,0.3);
+max-width:600px;
+animation:fadeIn 2s ease;
+}
+
+h1{
+font-size:32px;
+margin-bottom:15px;
+}
+
+p{
+font-size:18px;
+line-height:1.6;
+}
+
+button{
+margin-top:20px;
+padding:12px 25px;
+border:none;
+border-radius:25px;
+font-size:16px;
+background:white;
+color:#ff4081;
+cursor:pointer;
+transition:0.3s;
+}
+
+button:hover{
+transform:scale(1.1);
+background:#ffe6f0;
+}
+
+/* floating hearts */
+.heart{
+position:absolute;
+font-size:20px;
+animation:floatUp 6s linear infinite;
+}
+
+@keyframes floatUp{
+from{
+transform:translateY(100vh);
+opacity:1;
+}
+to{
+transform:translateY(-120vh);
+opacity:0;
+}
+}
+
+@keyframes fadeIn{
+from{opacity:0; transform:translateY(20px);}
+to{opacity:1; transform:translateY(0);}
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="box">
+
+<h1>💝 Welcome to Our Journey 💝</h1>
+
+<p>
+This is not just a website…<br><br>
+
+It is our story, our memories, our love ❤️<br><br>
+
+Click below to begin our journey together 💖
+</p>
+
+<button onclick="window.location.href='game.html'">
+Start Our Journey 💖
+</button>
+
+</div>
+
+<script>
+
+// floating hearts animation
+function createHeart(){
+
+let heart=document.createElement("div");
+heart.className="heart";
+heart.innerHTML="❤️";
+
+heart.style.left=Math.random()*100+"vw";
+heart.style.fontSize=(15+Math.random()*25)+"px";
+
+document.body.appendChild(heart);
+
+setTimeout(()=>{
+heart.remove();
+},6000);
+
+}
+
+setInterval(createHeart,400);
+
+</script>
+
+</body>
+</html>
